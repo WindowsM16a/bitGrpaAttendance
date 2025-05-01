@@ -13,7 +13,7 @@ const su = {
 	password: document.querySelector("#password"),
 };
 
-const qrCodeSize = "230";
+const qrCodeSize = "200";
 
 const scriptUrl =
 	"https://script.google.com/macros/s/AKfycbzNIxEnGmKem4SNw1Eb7Bw15HCWBa09Q4uBa7oJvtDSvyJti4qZkuFOTAERqXkKEI8Y/exec";
@@ -70,6 +70,7 @@ function displayCode() {
 		const img = document.createElement("img");
 		img.src = qrUrl;
 		img.alt = "QR code for the lesson's attendance";
+		img.style.borderRadius = "0.3rem";
 		dom.imgContainer.appendChild(img);
 	});
 }

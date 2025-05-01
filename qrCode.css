@@ -1,16 +1,43 @@
 .imgContainer {
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	width: 14.375rem;
 	height: 14.375rem;
-	justify-content: center;
-	margin: 3rem 0 0 0;
+	margin-top: 2rem;
+	background-color: var(--secondary);
+	border-radius: var(--radius);
+	border: 0.0625rem solid var(--border);
 }
 
-main {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	gap: 0.7rem;
+select {
+	font-size: 16px;
+	padding: 0.5rem;
+	border: 0.0625rem solid var(--input);
+	border-radius: var(--radius);
+	background-color: var(--secondary);
+	color: var(--secondary-foreground);
+	width: 100%;
+}
+
+#generate {
+	border-radius: 0.5rem;
+	border: 0.0625rem solid transparent;
+	padding: 0.6em 1.2em;
+	font-size: 1em;
+	font-weight: 500;
+	background-color: var(--primary);
+	color: var(--primary-foreground);
+	cursor: pointer;
+	margin: 0.25rem 0 0 0;
+	transition: border-color 0.25s;
+}
+
+#generate:hover {
+	border-color: #646cff;
+}
+
+#generate:focus,
+#generate:focus-visible {
+	outline: 0.25rem auto var(--ring);
 }
