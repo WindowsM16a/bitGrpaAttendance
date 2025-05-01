@@ -34,10 +34,9 @@ select {
 }
 
 #generate:hover {
-	border-color: #646cff;
+	border-color: var(--accent);
 }
 
-#generate:focus,
-#generate:focus-visible {
-	outline: 0.25rem auto var(--ring);
+#generate:active {
+	outline: 0.8px solid var(--foreground);
 }

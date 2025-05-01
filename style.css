@@ -90,9 +90,8 @@ label {
 	border-color: #646cff;
 }
 
-#login:focus,
-#login:focus-visible {
-	outline: 0.025rem auto var(--ring);
+#login:active {
+	outline: 0.8px solid var(--foreground);
 }
 
 /* Custom Components */
