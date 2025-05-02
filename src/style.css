@@ -60,6 +60,16 @@ h6 {
 input,
 #login {
 	font-family: "Space Grotesk", system-ui, sans-serif;
+	color: var(--secondary-foreground);
+}
+
+input:-webkit-autofill {
+	color: var(--secondary-foreground);
+	-webkit-text-fill-color: var(--secondary-foreground) !important;
+	transition: background-color 9999s ease-in-out 0s;
+	caret-color: var(--secondary-foreground) !important;
+	font-family: inherit;
+	font-size: inherit;
 }
 
 input:focus {
