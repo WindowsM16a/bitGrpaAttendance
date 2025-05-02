@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>QR Code</title>
+		<link rel="stylesheet" href="./style.css" />
+		<link rel="stylesheet" href="./qrCode.css" />
+	</head>
+	<body>
+		<main class="page-container">
+			<div class="card-container fade-in">
+				<div class="title-wrapper">
+					<div class="title auth-gradient">
+						<h3>BIT Level 200 Group A</h3>
+						<h4>QR Code Generator</h4>
+					</div>
+				</div>
+				<form id="form">
+					<label for="class">
+						<span>Select the class</span>
+						<select name="class" id="class" required>
+							<option value="Algorithms & Data Structures">
+								Algorithms & Data Structures
+							</option>
+							<option value="Java Programming">Java Programming</option>
+							<option value="Basic Economics">Basic Economics</option>
+							<option value="Computer Networks">Computer Networks</option>
+							<option value="Digital Computer Design">
+								Digital Computer Design
+							</option>
+							<option value="Database Concepts">Database Concepts</option>
+							<option value="Entrepreneurship & E-business">
+								Entrepreneurship & E-business
+							</option>
+						</select>
+					</label>
+					<button type="submit" id="generate">Generate</button>
+				</form>
+				<div class="imgContainer"></div>
+			</div>
+		</main>
+		<script src="./main.js"></script>
+	</body>
+</html>
