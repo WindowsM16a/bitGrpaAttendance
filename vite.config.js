@@ -9,7 +9,7 @@ export default defineConfig({
 				qr: "./src/qrCode.html",
 			},
 		},
-		outDir: "./dist",
+		outDir: "../dist",
 		emptyOutDir: true,
 	},
 	server: {
