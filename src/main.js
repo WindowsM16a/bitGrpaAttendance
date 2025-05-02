@@ -41,7 +41,7 @@ function verifySu(e) {
 		su.username.value === "adminShayne" &&
 		su.password.value === "myPassword"
 	) {
-		window.location.href = "./qrCode.html";
+		window.location.href = "../src/qrCode.html";
 	} else {
 		alert("Wrong credentials");
 	}
