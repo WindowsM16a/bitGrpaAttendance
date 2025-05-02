@@ -40,3 +40,17 @@ select {
 #generate:active {
 	outline: 0.8px solid var(--foreground);
 }
+
+span {
+	font-size: 1rem;
+}
+
+label {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+#class {
+	height: 2.65rem;
+}
