@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		signInWithEmailAndPassword(auth, dom.email.value, dom.password.value).then(
 			(userCredential) => {
-				showMessage("ehhh", "message");
+				showMessage("ehhh", "#message");
 				const user = userCredential.user;
 				localStorage.setItem("loggedInUserId", user.uid);
 				window.location.href = "https://google.com";
