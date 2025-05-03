@@ -104,6 +104,14 @@ label {
 	outline: 0.8px solid var(--foreground);
 }
 
+#message {
+	font-size: 0.85rem;
+	background-color: var(--background);
+	border-radius: 0.3rem;
+	opacity: 0;
+	animation: fadeOut 7s forwards;
+}
+
 /* Custom Components */
 
 .auth-gradient {

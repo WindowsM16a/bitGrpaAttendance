@@ -37,15 +37,28 @@ const dom = {
 	emailV: document.querySelector("#email").value,
 	passwordV: document.querySelector("#password").value,
 	loginBtn: document.querySelector("#login"),
+	messageDiv: document.querySelector("#message"),
 };
+
+function showMessage(message, divId) {
+	dom.messageDiv.style.display = "block";
+	dom.messageDiv.innerHTML = message;
+	dom.messageDiv.style.opacity = 1;
+	setTimeout(() => {
+		dom.messageDiv.style.opacity = 0;
+	}, 5000);
+}
 
 document.addEventListener("DOMContentLoaded", () => {
 	dom.loginBtn.addEventListener("click", (e) => {
 		e.preventDefault();
 		const auth = getAuth();
 
-		signInWithEmailAndPassword(auth, email, password).then(
-			(userCredential) => {}
-		);
+		signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
+			showMessage("ehhh", "message");
+			const user = userCredential.user;
+			localStorage.setItem("loggedInUserId", user.uid);
+			window.location.href = "https://google.com";
+		});
 	});
 });
