@@ -52,6 +52,9 @@ async function generateCode() {
 }
 
 function displayCode() {
+	dom.generateBtn.disabled = true;
+	dom.generateBtn.style.color = "hsl(215, 20%, 75%)";
+	dom.generateBtn.style.backgroundColor = "hsl(232, 25%, 22%)";
 	generateCode().then((qrUrl) => {
 		if (!qrUrl) return;
 		dom.imgContainer.innerHTML = "";
@@ -60,5 +63,6 @@ function displayCode() {
 		img.alt = "QR code for the lesson's attendance";
 		img.style.borderRadius = "0.3rem";
 		dom.imgContainer.appendChild(img);
+		dom.generateBtn.disabled = true;
 	});
 }

@@ -97,7 +97,7 @@ label {
 }
 
 #login:hover {
-	border-color: #646cff;
+	border-color: var(--);
 }
 
 #login:active {
