@@ -16,4 +16,3 @@ export function generateKey(codeLimit) {
 	console.log(code);
 	return code;
 }
-generateKey(6);
