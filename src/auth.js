@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 			return emailRegex.test(email);
 		}
-		isValidEmail(dom.emailV);
+		console.log(isValidEmail(dom.emailV));
 
 		// signInWithEmailAndPassword(auth, dom.emailV, dom.passwordV).then(
 		// 	(userCredential) => {
