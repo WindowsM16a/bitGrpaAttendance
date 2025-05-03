@@ -4,8 +4,6 @@ export function generateKey(codeLimit) {
 	const chars = ["/", ",", "?", ".", "!", "@"];
 	const lettersUppercase = letters.map((letter) => letter.toUpperCase());
 	const lettersLowercase = letters.map((letter) => letter.toLowerCase());
-	console.log(lettersLowercase);
-	console.log(lettersUppercase);
 	const charPool = nums.concat(chars, lettersUppercase, lettersLowercase);
 
 	let code = [];

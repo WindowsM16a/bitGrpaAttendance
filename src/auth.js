@@ -37,13 +37,13 @@ const dom = {
 	emailV: document.querySelector("#email").value,
 	passwordV: document.querySelector("#password").value,
 	loginBtn: document.querySelector("#login"),
-	messageDiv: document.querySelector("#message"),
 };
 
 function showMessage(message, divId) {
-	dom.messageDiv.style.display = "block";
-	dom.messageDiv.innerHTML = message;
-	dom.messageDiv.style.opacity = 1;
+	const messageDiv = document.querySelector(divId);
+	messageDiv.style.display = "block";
+	messageDiv.innerHTML = message;
+	messageDiv.style.opacity = 1;
 	setTimeout(() => {
 		dom.messageDiv.style.opacity = 0;
 	}, 5000);
