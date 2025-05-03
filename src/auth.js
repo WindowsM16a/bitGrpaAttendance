@@ -51,20 +51,20 @@ document.addEventListener("DOMContentLoaded", () => {
 	dom.loginBtn.addEventListener("click", (e) => {
 		e.preventDefault();
 		const auth = getAuth();
-		function isValidEmail(email) {
-			const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-			return emailRegex.test(email);
-		}
-		console.log(dom.email.value);
-		console.log(isValidEmail(dom.email.value));
+		// function isValidEmail(email) {
+		// 	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+		// 	return emailRegex.test(email);
+		// }
+		// console.log(dom.email.value);
+		// console.log(isValidEmail(dom.email.value));
 
-		// signInWithEmailAndPassword(auth, dom.email.value, dom.password.value).then(
-		// 	(userCredential) => {
-		// 		showMessage("ehhh", "message");
-		// 		const user = userCredential.user;
-		// 		localStorage.setItem("loggedInUserId", user.uid);
-		// 		window.location.href = "https://google.com";
-		// 	}
-		// );
+		signInWithEmailAndPassword(auth, dom.email.value, dom.password.value).then(
+			(userCredential) => {
+				showMessage("ehhh", "message");
+				const user = userCredential.user;
+				localStorage.setItem("loggedInUserId", user.uid);
+				window.location.href = "https://google.com";
+			}
+		);
 	});
 });
