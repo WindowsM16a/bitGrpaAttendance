@@ -105,12 +105,12 @@ label {
 }
 
 #message {
-	font-size: 1rem;
+	font-size: 1.1rem;
 	background-color: var(--background);
-	padding: 0.3rem;
+	padding: 0.35rem;
 	border-radius: 0.3rem;
 	opacity: 0;
-	animation: fadeOut 7s forwards;
+	animation: ease-in fadeOut 7s forwards;
 }
 
 /* Custom Components */
