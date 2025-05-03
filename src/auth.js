@@ -67,6 +67,7 @@ function showMessage(message, divId) {
 document.addEventListener("DOMContentLoaded", () => {
 	dom.loginBtn.addEventListener("click", (e) => {
 		e.preventDefault();
+		dom.loginBtn.disabled = true;
 		const auth = getAuth();
 		// function isValidEmail(email) {
 		// 	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -80,7 +81,6 @@ document.addEventListener("DOMContentLoaded", () => {
 				showMessage("Login Successful ✅", "#message");
 				const user = userCredential.user;
 				localStorage.setItem("loggedInUserId", user.uid);
-				dom.loginBtn.disabled = true;
 				window.location.href = "./qrCode.html";
 				dom.email.value = "";
 				dom.password.value = "";
