@@ -62,20 +62,3 @@ function displayCode() {
 		dom.imgContainer.appendChild(img);
 	});
 }
-
-// this works
-fetch("/api/sendSms", {
-	method: "POST",
-	headers: { "Content-Type": "application/json" },
-	body: JSON.stringify({
-		body: generateKey(6),
-	}),
-})
-	.then((res) => res.json())
-	.then((data) => {
-		if (data.sid) {
-			alert("SMS sent successfully!");
-		} else {
-			alert("Error: " + data.error);
-		}
-	});
