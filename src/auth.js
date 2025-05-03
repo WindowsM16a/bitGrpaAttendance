@@ -70,6 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		dom.loginBtn.disabled = true;
 		dom.loginBtn.style.backgroundColor = "#2a2e46";
 		dom.loginBtn.style.color = "#b3bdcc";
+		dom.loginBtn.style.cursor = "not-allowed";
 		const auth = getAuth();
 		// function isValidEmail(email) {
 		// 	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
