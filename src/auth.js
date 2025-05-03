@@ -49,24 +49,23 @@ function showMessage(message, divId) {
 	}, 5000);
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-	dom.loginBtn.addEventListener("click", (e) => {
-		e.preventDefault();
-		const auth = getAuth();
-		function isValidEmail(email) {
-			const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-			return emailRegex.test(email);
-		}
-		console.log(dom.emailV);
-		console.log(isValidEmail(dom.emailV));
+document.addEventListener("DOMContentLoaded", () => {});
+dom.loginBtn.addEventListener("click", (e) => {
+	e.preventDefault();
+	const auth = getAuth();
+	function isValidEmail(email) {
+		const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+		return emailRegex.test(email);
+	}
+	console.log(dom.emailV);
+	console.log(isValidEmail(dom.emailV));
 
-		// signInWithEmailAndPassword(auth, dom.emailV, dom.passwordV).then(
-		// 	(userCredential) => {
-		// 		showMessage("ehhh", "message");
-		// 		const user = userCredential.user;
-		// 		localStorage.setItem("loggedInUserId", user.uid);
-		// 		window.location.href = "https://google.com";
-		// 	}
-		// );
-	});
+	// signInWithEmailAndPassword(auth, dom.emailV, dom.passwordV).then(
+	// 	(userCredential) => {
+	// 		showMessage("ehhh", "message");
+	// 		const user = userCredential.user;
+	// 		localStorage.setItem("loggedInUserId", user.uid);
+	// 		window.location.href = "https://google.com";
+	// 	}
+	// );
 });
