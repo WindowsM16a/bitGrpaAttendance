@@ -54,11 +54,13 @@ document.addEventListener("DOMContentLoaded", () => {
 		e.preventDefault();
 		const auth = getAuth();
 
-		signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
-			showMessage("ehhh", "message");
-			const user = userCredential.user;
-			localStorage.setItem("loggedInUserId", user.uid);
-			window.location.href = "https://google.com";
-		});
+		signInWithEmailAndPassword(auth, dom.emailV, dom.passwordV).then(
+			(userCredential) => {
+				showMessage("ehhh", "message");
+				const user = userCredential.user;
+				localStorage.setItem("loggedInUserId", user.uid);
+				window.location.href = "https://google.com";
+			}
+		);
 	});
 });
