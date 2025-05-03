@@ -35,15 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 });
 
-// function verifySu(e) {
-// 	e.preventDefault();
-// 	if (su.email.value === "adminShayne" && su.password.value === "myPassword") {
-// 		window.location.href = "./qrCode.html";
-// 	} else {
-// 		alert("Wrong credentials");
-// 	}
-// }
-
 async function generateCode() {
 	const classValue = dom.className.value;
 	const fullUrl = `${scriptUrl}?class=${encodeURIComponent(classValue)}`;
