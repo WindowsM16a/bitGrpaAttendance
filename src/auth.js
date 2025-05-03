@@ -34,8 +34,6 @@ const app = initializeApp(firebaseConfig);
 const dom = {
 	email: document.querySelector("#email"),
 	password: document.querySelector("#password"),
-	emailV: document.querySelector("#email").value,
-	passwordV: document.querySelector("#password").value,
 	loginBtn: document.querySelector("#login"),
 };
 
@@ -49,23 +47,24 @@ function showMessage(message, divId) {
 	}, 5000);
 }
 
-document.addEventListener("DOMContentLoaded", () => {});
-dom.loginBtn.addEventListener("click", (e) => {
-	e.preventDefault();
-	const auth = getAuth();
-	function isValidEmail(email) {
-		const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-		return emailRegex.test(email);
-	}
-	console.log(dom.emailV);
-	console.log(isValidEmail(dom.emailV));
+document.addEventListener("DOMContentLoaded", () => {
+	dom.loginBtn.addEventListener("click", (e) => {
+		e.preventDefault();
+		const auth = getAuth();
+		function isValidEmail(email) {
+			const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+			return emailRegex.test(email);
+		}
+		console.log(dom.email.value);
+		console.log(isValidEmail(dom.email.value));
 
-	// signInWithEmailAndPassword(auth, dom.emailV, dom.passwordV).then(
-	// 	(userCredential) => {
-	// 		showMessage("ehhh", "message");
-	// 		const user = userCredential.user;
-	// 		localStorage.setItem("loggedInUserId", user.uid);
-	// 		window.location.href = "https://google.com";
-	// 	}
-	// );
+		// signInWithEmailAndPassword(auth, dom.email.value, dom.password.value).then(
+		// 	(userCredential) => {
+		// 		showMessage("ehhh", "message");
+		// 		const user = userCredential.user;
+		// 		localStorage.setItem("loggedInUserId", user.uid);
+		// 		window.location.href = "https://google.com";
+		// 	}
+		// );
+	});
 });
