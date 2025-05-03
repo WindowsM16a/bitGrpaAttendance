@@ -1,3 +1,4 @@
+import { error } from "console";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
 import {
 	getAuth,
@@ -64,6 +65,11 @@ function showMessage(message, divId) {
 	}, 5000);
 }
 
+function isValidEmail(email) {
+	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+	return emailRegex.test(email);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
 	dom.loginBtn.addEventListener("click", (e) => {
 		e.preventDefault();
@@ -72,22 +78,25 @@ document.addEventListener("DOMContentLoaded", () => {
 		dom.loginBtn.style.color = "#b3bdcc";
 		dom.loginBtn.style.cursor = "not-allowed";
 		const auth = getAuth();
-		// function isValidEmail(email) {
-		// 	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-		// 	return emailRegex.test(email);
-		// }
-		// console.log(dom.email.value);
-		// console.log(isValidEmail(dom.email.value));
 
-		signInWithEmailAndPassword(auth, dom.email.value, dom.password.value).then(
-			(userCredential) => {
-				showMessage("Login Successful ✅", "#message");
-				const user = userCredential.user;
-				localStorage.setItem("loggedInUserId", user.uid);
-				window.location.href = "./qrCode.html";
-				dom.email.value = "";
-				dom.password.value = "";
-			}
-		);
+		if (isValidEmail()) {
+			signInWithEmailAndPassword(auth, dom.email.value, dom.password.value)
+				.then((userCredential) => {
+					showMessage("Login Successful ✅", "#message");
+					const user = userCredential.user;
+					localStorage.setItem("loggedInUserId", user.uid);
+					window.location.href = "./qrCode.html";
+					dom.email.value = "";
+					dom.password.value = "";
+				})
+				.catch((error) => {
+					const errCode = error.code;
+					if (errCode === "auth/invalid-credential") {
+						showMessage("Incorrect Email or Password", "#message");
+					} else {
+						showMessage("Account does not exist. Contact admin", "#message");
+					}
+				});
+		} else alert("Invalid email format");
 	});
 });
