@@ -76,7 +76,6 @@ fetch("/api/sendSms", {
 	method: "POST",
 	headers: { "Content-Type": "application/json" },
 	body: JSON.stringify({
-		to: "+18777804236",
 		body: generateKey(6),
 	}),
 })

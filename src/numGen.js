@@ -13,6 +13,6 @@ export function generateKey(codeLimit) {
 		let randNum = Math.floor(Math.random() * charPool.length);
 		code += charPool[randNum];
 	}
-	console.log(code);
+	// console.log(code);
 	return code;
 }

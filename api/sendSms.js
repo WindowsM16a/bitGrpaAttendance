@@ -11,7 +11,7 @@ export default async function handler(req, res) {
 		const message = await client.messages.create({
 			body,
 			from: process.env.TWILIO_PHONE,
-			to,
+			to: process.env.TWILIO_RECEIVER_PHONE,
 		});
 
 		res.status(200).json({ sid: message.sid });
