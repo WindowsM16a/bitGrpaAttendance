@@ -39,11 +39,11 @@ const dom = {
 
 function showMessage(message, divId) {
 	const messageDiv = document.querySelector(divId);
-	messageDiv.style.display = "block";
+	messageDiv.style.display = "flex";
 	messageDiv.innerHTML = message;
 	messageDiv.style.opacity = 1;
 	setTimeout(() => {
-		dom.messageDiv.style.opacity = 0;
+		messageDiv.style.opacity = 0;
 	}, 5000);
 }
 
