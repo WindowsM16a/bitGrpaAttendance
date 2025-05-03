@@ -1,9 +1,16 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+import {
+	getAuth,
+	createUserWithEmailAndPassword,
+	signInWithEmailAndPassword,
+} from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+import {
+	getFirestore,
+	setDoc,
+	doc,
+} from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// api key
+// keys
 const apiKey = import.meta.env.VITE_API_KEY;
 const authDomain = import.meta.env.VITE_AUTH_DOMAIN;
 const projectId = import.meta.env.VITE_PROJECT_ID;
@@ -23,4 +30,22 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-console.log(apiKey);
+
+const dom = {
+	email: document.querySelector("#email"),
+	password: document.querySelector("#password"),
+	emailV: document.querySelector("#email").value,
+	passwordV: document.querySelector("#password").value,
+	loginBtn: document.querySelector("#login"),
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+	dom.loginBtn.addEventListener("click", (e) => {
+		e.preventDefault();
+		const auth = getAuth();
+
+		signInWithEmailAndPassword(auth, email, password).then(
+			(userCredential) => {}
+		);
+	});
+});

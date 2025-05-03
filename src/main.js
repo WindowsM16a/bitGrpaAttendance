@@ -1,4 +1,4 @@
-// src/main.js
+import { generateKey } from "./numGen.js";
 
 const dom = {
 	className: document.querySelector("#class"),
@@ -9,7 +9,7 @@ const dom = {
 };
 
 const su = {
-	username: document.querySelector("#username"),
+	email: document.querySelector("#email"),
 	password: document.querySelector("#password"),
 };
 
@@ -25,9 +25,9 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 
 	// login button
-	if (dom.loginBtn) {
-		dom.loginBtn.addEventListener("click", verifySu);
-	}
+	// if (dom.loginBtn) {
+	// 	dom.loginBtn.addEventListener("click", verifySu);
+	// }
 
 	// on the QR-code page: generate and show code
 	if (dom.imgContainer && dom.className) {
@@ -35,17 +35,14 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 });
 
-function verifySu(e) {
-	e.preventDefault();
-	if (
-		su.username.value === "adminShayne" &&
-		su.password.value === "myPassword"
-	) {
-		window.location.href = "./qrCode.html";
-	} else {
-		alert("Wrong credentials");
-	}
-}
+// function verifySu(e) {
+// 	e.preventDefault();
+// 	if (su.email.value === "adminShayne" && su.password.value === "myPassword") {
+// 		window.location.href = "./qrCode.html";
+// 	} else {
+// 		alert("Wrong credentials");
+// 	}
+// }
 
 async function generateCode() {
 	const classValue = dom.className.value;
@@ -74,3 +71,20 @@ function displayCode() {
 		dom.imgContainer.appendChild(img);
 	});
 }
+
+fetch("/api/send-sms", {
+	method: "POST",
+	headers: { "Content-Type": "application/json" },
+	body: JSON.stringify({
+		to: "+19704108212",
+		body: generateKey(6),
+	}),
+})
+	.then((res) => res.json())
+	.then((data) => {
+		if (data.sid) {
+			alert("SMS sent successfully!");
+		} else {
+			alert("Error: " + data.error);
+		}
+	});
