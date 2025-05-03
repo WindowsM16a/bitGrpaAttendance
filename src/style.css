@@ -105,8 +105,9 @@ label {
 }
 
 #message {
-	font-size: 0.85rem;
+	font-size: 1rem;
 	background-color: var(--background);
+	padding: 0.3rem;
 	border-radius: 0.3rem;
 	opacity: 0;
 	animation: fadeOut 7s forwards;

@@ -64,6 +64,8 @@ document.addEventListener("DOMContentLoaded", () => {
 				const user = userCredential.user;
 				localStorage.setItem("loggedInUserId", user.uid);
 				window.location.href = "./qrCode.html";
+				dom.email.value = "";
+				dom.password.value = "";
 			}
 		);
 	});
