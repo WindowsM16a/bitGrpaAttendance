@@ -72,7 +72,7 @@ function displayCode() {
 	});
 }
 
-fetch("/api/send-sms", {
+fetch("/api/sendSms", {
 	method: "POST",
 	headers: { "Content-Type": "application/json" },
 	body: JSON.stringify({
