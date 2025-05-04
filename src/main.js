@@ -10,8 +10,6 @@ const dom = {
 
 const qrCodeSize = "200";
 
-console.log(dom.className[0]);
-
 const editors = ["aburgars@gmail.com", "gameredem14@gmail.com"];
 const editorsParam = encodeURIComponent(editors.join(","));
 
