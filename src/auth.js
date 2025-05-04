@@ -65,11 +65,6 @@ function showMessage(message, divId) {
 	}, 2000);
 }
 
-function isValidEmail(email) {
-	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-	return emailRegex.test(email);
-}
-
 document.addEventListener("DOMContentLoaded", () => {
 	dom.loginBtn.addEventListener("click", (e) => {
 		e.preventDefault();

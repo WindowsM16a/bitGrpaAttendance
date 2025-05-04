@@ -8,15 +8,13 @@ const dom = {
 	generateBtn: document.querySelector("#generate"),
 };
 
-const su = {
-	email: document.querySelector("#email"),
-	password: document.querySelector("#password"),
-};
-
 const qrCodeSize = "200";
 
+const editors = ["aburgars@gmail.com", "gameredem14@gmail.com"];
+const editorsParam = encodeURIComponent(editors.join(","));
+
 const scriptUrl =
-	"https://script.google.com/macros/s/AKfycbzNIxEnGmKem4SNw1Eb7Bw15HCWBa09Q4uBa7oJvtDSvyJti4qZkuFOTAERqXkKEI8Y/exec";
+	"https://script.google.com/macros/s/AKfycbzUXOfSDJRLBFmbtJvuG5yXJtsNWM8EZF78-iFhyLUmgmqb9BVXxxgdyUKgXq9N56Y/exec";
 
 document.addEventListener("DOMContentLoaded", () => {
 	// prevent normal form submission
@@ -37,7 +35,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 async function generateCode() {
 	const classValue = dom.className.value;
-	const fullUrl = `${scriptUrl}?class=${encodeURIComponent(classValue)}`;
+	const fullUrl = `${scriptUrl}?class=${encodeURIComponent(
+		classValue
+	)}&editors=${editorsParam}`;
+	console.log(fullUrl);
 	try {
 		const res = await fetch(fullUrl);
 		const data = await res.json();
