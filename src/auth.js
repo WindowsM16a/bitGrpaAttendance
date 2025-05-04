@@ -79,29 +79,25 @@ document.addEventListener("DOMContentLoaded", () => {
 		dom.loginBtn.style.cursor = "not-allowed";
 		const auth = getAuth();
 
-		if (console.log(isValidEmail(dom.email.value)) == true) {
-			signInWithEmailAndPassword(auth, dom.email.value, dom.password.value)
-				.then((userCredential) => {
-					showMessage("Login Successful ✅", "#message");
-					const user = userCredential.user;
-					localStorage.setItem("loggedInUserId", user.uid);
-					window.location.href = "./qrCode.html";
-					dom.email.value = "";
-					dom.password.value = "";
-				})
-				.catch((error) => {
-					const errCode = error.code;
-					if (errCode === "auth/invalid-credential") {
-						showMessage("Incorrect Email or Password", "#message");
-					} else {
-						showMessage("Account does not exist. Contact admin", "#message");
-					}
-				});
-		} else {
-			alert("Invalid email format");
-			dom.loginBtn.disabled = false;
-			dom.loginBtn.style.backgroundColor = "#9e75f0";
-			dom.loginBtn.style.color = "#f8fafc";
-		}
+		signInWithEmailAndPassword(auth, dom.email.value, dom.password.value)
+			.then((userCredential) => {
+				showMessage("Login Successful ✅", "#message");
+				const user = userCredential.user;
+				localStorage.setItem("loggedInUserId", user.uid);
+				window.location.href = "./qrCode.html";
+				dom.email.value = "";
+				dom.password.value = "";
+			})
+			.catch((error) => {
+				const errCode = error.code;
+				if (errCode === "auth/invalid-credential") {
+					showMessage("Incorrect Email or Password", "#message");
+				} else {
+					showMessage("Account does not exist. Contact admin", "#message");
+				}
+				dom.loginBtn.disabled = false;
+				dom.loginBtn.style.backgroundColor = "#9e75f0";
+				dom.loginBtn.style.color = "#f8fafc";
+			});
 	});
 });
