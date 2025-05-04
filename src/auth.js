@@ -62,7 +62,7 @@ function showMessage(message, divId) {
 	messageDiv.style.opacity = 1;
 	setTimeout(() => {
 		messageDiv.style.display = "none";
-	}, 3000);
+	}, 2000);
 }
 
 function isValidEmail(email) {
