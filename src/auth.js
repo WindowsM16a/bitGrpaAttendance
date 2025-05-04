@@ -61,7 +61,7 @@ function showMessage(message, divId) {
 	messageDiv.innerHTML = message;
 	messageDiv.style.opacity = 1;
 	setTimeout(() => {
-		messageDiv.style.opacity = 0;
+		messageDiv.style.display = "none";
 	}, 5000);
 }
 
@@ -90,9 +90,6 @@ document.addEventListener("DOMContentLoaded", () => {
 				dom.loginBtn.disabled = false;
 				dom.loginBtn.style.backgroundColor = "#9e75f0";
 				dom.loginBtn.style.color = "#f8fafc";
-				setTimeout(() => {
-					document.querySelector("#message").display = "none";
-				}, 5002);
 			})
 			.catch((error) => {
 				const errCode = error.code;
@@ -105,9 +102,6 @@ document.addEventListener("DOMContentLoaded", () => {
 				dom.loginBtn.style.cursor = "pointer";
 				dom.loginBtn.style.backgroundColor = "#9e75f0";
 				dom.loginBtn.style.color = "#f8fafc";
-				setTimeout(() => {
-					document.querySelector("#message").display = "none";
-				}, 5002);
 			});
 	});
 });
