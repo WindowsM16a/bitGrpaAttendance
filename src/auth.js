@@ -87,6 +87,10 @@ document.addEventListener("DOMContentLoaded", () => {
 				window.location.href = "./qrCode.html";
 				dom.email.value = "";
 				dom.password.value = "";
+				dom.loginBtn.disabled = false;
+				dom.loginBtn.style.backgroundColor = "#9e75f0";
+				dom.loginBtn.style.color = "#f8fafc";
+				document.querySelector("#message").display = "none";
 			})
 			.catch((error) => {
 				const errCode = error.code;
@@ -95,9 +99,6 @@ document.addEventListener("DOMContentLoaded", () => {
 				} else {
 					showMessage("Account does not exist. Contact admin", "#message");
 				}
-				dom.loginBtn.disabled = false;
-				dom.loginBtn.style.backgroundColor = "#9e75f0";
-				dom.loginBtn.style.color = "#f8fafc";
 			});
 	});
 });
