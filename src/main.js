@@ -33,6 +33,17 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 });
 
+if (dom.className) {
+	dom.className.addEventListener(
+		"focus",
+		() => (dom.className.options[0].disabled = false)
+	);
+	dom.className.addEventListener(
+		"mousedown",
+		() => (dom.className.options[0].disabled = false)
+	);
+}
+
 async function generateCode() {
 	const classValue = dom.className.value;
 	const fullUrl = `${scriptUrl}?class=${encodeURIComponent(
