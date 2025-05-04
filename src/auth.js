@@ -90,7 +90,9 @@ document.addEventListener("DOMContentLoaded", () => {
 				dom.loginBtn.disabled = false;
 				dom.loginBtn.style.backgroundColor = "#9e75f0";
 				dom.loginBtn.style.color = "#f8fafc";
-				document.querySelector("#message").display = "none";
+				setTimeout(() => {
+					document.querySelector("#message").display = "none";
+				}, 5002);
 			})
 			.catch((error) => {
 				const errCode = error.code;
@@ -103,7 +105,9 @@ document.addEventListener("DOMContentLoaded", () => {
 				dom.loginBtn.style.cursor = "pointer";
 				dom.loginBtn.style.backgroundColor = "#9e75f0";
 				dom.loginBtn.style.color = "#f8fafc";
-				document.querySelector("#message").display = "none";
+				setTimeout(() => {
+					document.querySelector("#message").display = "none";
+				}, 5002);
 			});
 	});
 });
