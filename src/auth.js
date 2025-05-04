@@ -97,6 +97,11 @@ document.addEventListener("DOMContentLoaded", () => {
 						showMessage("Account does not exist. Contact admin", "#message");
 					}
 				});
-		} else alert("Invalid email format");
+		} else {
+			alert("Invalid email format");
+			dom.loginBtn.disabled = false;
+			dom.loginBtn.style.backgroundColor = "#9e75f0";
+			dom.loginBtn.style.color = "#f8fafc";
+		}
 	});
 });
