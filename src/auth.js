@@ -82,9 +82,6 @@ document.addEventListener("DOMContentLoaded", () => {
 				window.location.href = "./qrCode.html";
 				dom.email.value = "";
 				dom.password.value = "";
-				dom.loginBtn.disabled = false;
-				dom.loginBtn.style.backgroundColor = "#9e75f0";
-				dom.loginBtn.style.color = "#f8fafc";
 			})
 			.catch((error) => {
 				const errCode = error.code;
