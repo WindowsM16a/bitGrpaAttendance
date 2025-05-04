@@ -14,7 +14,7 @@ const editors = ["aburgars@gmail.com", "gameredem14@gmail.com"];
 const editorsParam = encodeURIComponent(editors.join(","));
 
 const scriptUrl =
-	"https://script.google.com/macros/s/AKfycbxbDPCdELMHbtnFUAQwZpn3IvoVwW4tG5a3AZpyFug4lgw0nnTmcu82VLD0J9018Y8M/exec";
+	"https://script.google.com/macros/s/AKfycbzIGuIrVzHf33Aoo8uhxXrjgdRws6tzoN2nD3faC5yK6ai9CyzDbwXWKySjdcZode9J/exec";
 
 document.addEventListener("DOMContentLoaded", () => {
 	// prevent normal form submission
@@ -32,17 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
 		dom.generateBtn.addEventListener("click", displayCode);
 	}
 });
-
-if (dom.className) {
-	dom.className.addEventListener(
-		"focus",
-		() => (dom.className.options[0].disabled = false)
-	);
-	dom.className.addEventListener(
-		"mousedown",
-		() => (dom.className.options[0].disabled = false)
-	);
-}
 
 async function generateCode() {
 	const classValue = dom.className.value;
