@@ -14,7 +14,7 @@ const editors = ["aburgars@gmail.com", "gameredem14@gmail.com"];
 const editorsParam = encodeURIComponent(editors.join(","));
 
 const scriptUrl =
-	"https://script.google.com/macros/s/AKfycbzUXOfSDJRLBFmbtJvuG5yXJtsNWM8EZF78-iFhyLUmgmqb9BVXxxgdyUKgXq9N56Y/exec";
+	"https://script.google.com/macros/s/AKfycbxJzaJ-mNmzz7U_7hbgCd26mzixNZwSLkkdAIo_7zyKgu6rsNkg4hP27RPX3DqgqTTJ/exec";
 
 document.addEventListener("DOMContentLoaded", () => {
 	// prevent normal form submission
