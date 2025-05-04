@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		dom.loginBtn.style.cursor = "not-allowed";
 		const auth = getAuth();
 
-		if (isValidEmail()) {
+		if (console.log(isValidEmail())) {
 			signInWithEmailAndPassword(auth, dom.email.value, dom.password.value)
 				.then((userCredential) => {
 					showMessage("Login Successful ✅", "#message");
