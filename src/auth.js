@@ -99,6 +99,10 @@ document.addEventListener("DOMContentLoaded", () => {
 				} else {
 					showMessage("Account does not exist. Contact admin", "#message");
 				}
+				dom.loginBtn.disabled = false;
+				dom.loginBtn.style.backgroundColor = "#9e75f0";
+				dom.loginBtn.style.color = "#f8fafc";
+				document.querySelector("#message").display = "none";
 			});
 	});
 });
