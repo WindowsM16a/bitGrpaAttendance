@@ -100,6 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
 					showMessage("Account does not exist. Contact admin", "#message");
 				}
 				dom.loginBtn.disabled = false;
+				dom.loginBtn.style.cursor = "pointer";
 				dom.loginBtn.style.backgroundColor = "#9e75f0";
 				dom.loginBtn.style.color = "#f8fafc";
 				document.querySelector("#message").display = "none";
