@@ -10,7 +10,7 @@ const dom = {
 
 const qrCodeSize = "200";
 
-const editors = ["aburgars@gmail.com", "Kofigah105augustine@gmail.com"];
+const editors = ["aburgars@gmail.com", "Kofigah105augustine@gmail.com", "nanadonaldsomuah18@gmail.com"];
 const editorsParam = encodeURIComponent(editors.join(","));
 
 const scriptUrl =
